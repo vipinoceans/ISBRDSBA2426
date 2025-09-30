@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBase, Hive & Impala Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .slide h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #87CEEB;
+        }
+
+        .slide p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .slide ul {
+            text-align: left;
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .slide li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .slide li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .tech-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+        }
+
+        .architecture-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .component {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            min-width: 150px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .component:hover {
+            transform: scale(1.05);
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #FFD700;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slide h2 {
+                font-size: 2rem;
+            }
+            
+            .slide p,
+            .slide li {
+                font-size: 1rem;
+            }
+            
+            .slide {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">15</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>Big Data Technologies</h1>
+            <h2>HBase, Hive & Impala</h2>
+            <p>Understanding the Hadoop Ecosystem's Key Components</p>
+            <div class="architecture-diagram">
+                <div class="component">HBase<br><small>NoSQL Database</small></div>
+                <div class="arrow">↔</div>
+                <div class="component">Hive<br><small>Data Warehouse</small></div>
+                <div class="arrow">↔</div>
+                <div class="component">Impala<br><small>SQL Engine</small></div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Overview -->
+        <div class="slide">
+            <h2>Hadoop Ecosystem Overview</h2>
+            <div class="tech-card">
+                <p>The Hadoop ecosystem provides a comprehensive platform for big data processing and analytics. Today we'll explore three critical components:</p>
+                <ul>
+                    <li><strong>HBase</strong> - A distributed NoSQL database for real-time read/write access</li>
+                    <li><strong>Hive</strong> - A data warehouse software for managing large datasets</li>
+                    <li><strong>Impala</strong> - A massively parallel processing SQL query engine</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 3: HBase Introduction -->
+        <div class="slide">
+            <h2>Apache HBase</h2>
+            <div class="tech-card">
+                <h3>What is HBase?</h3>
+                <p>HBase is a distributed, scalable, NoSQL database that runs on top of the Hadoop Distributed File System (HDFS). It's modeled after Google's Bigtable and provides real-time read/write access to large datasets.</p>
+                <ul>
+                    <li>Column-family oriented database</li>
+                    <li>Horizontally scalable</li>
+                    <li>Fault-tolerant</li>
+                    <li>Consistent and strongly typed</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: HBase Architecture -->
+        <div class="slide">
+            <h2>HBase Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="component">HMaster<br><small>Master Server</small></div>
+                <div class="component">RegionServer<br><small>Data Storage</small></div>
+                <div class="component">ZooKeeper<br><small>Coordination</small></div>
+            </div>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>HMaster:</strong> Manages region assignment, DDL operations, load balancing</li>
+                    <li><strong>RegionServer:</strong> Handles read/write requests, manages regions</li>
+                    <li><strong>Regions:</strong> Horizontal partitions of tables</li>
+                    <li><strong>ZooKeeper:</strong> Provides coordination and configuration management</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: HBase Features -->
+        <div class="slide">
+            <h2>HBase Key Features</h2>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>Scalability:</strong> Can handle petabytes of data across thousands of nodes</li>
+                    <li><strong>Fast Access:</strong> Sub-second response times for random reads/writes</li>
+                    <li><strong>Flexible Schema:</strong> No predefined schema, columns can be added dynamically</li>
+                    <li><strong>Automatic Failover:</strong> Built-in fault tolerance and recovery</li>
+                    <li><strong>Strong Consistency:</strong> ACID properties for row-level operations</li>
+                    <li><strong>Versioning:</strong> Multiple versions of data with timestamps</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: Hive Introduction -->
+        <div class="slide">
+            <h2>Apache Hive</h2>
+            <div class="tech-card">
+                <h3>What is Hive?</h3>
+                <p>Hive is a data warehouse software project built on top of Hadoop for providing data query and analysis. It gives an SQL-like interface to query data stored in various databases and file systems.</p>
+                <ul>
+                    <li>SQL-like query language (HiveQL)</li>
+                    <li>Schema on read architecture</li>
+                    <li>ETL (Extract, Transform, Load) capabilities</li>
+                    <li>Integration with Hadoop ecosystem</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Hive Architecture -->
+        <div class="slide">
+            <h2>Hive Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="component">Hive Client<br><small>CLI/JDBC/ODBC</small></div>
+                <div class="arrow">→</div>
+                <div class="component">Driver<br><small>Query Processing</small></div>
+                <div class="arrow">→</div>
+                <div class="component">Metastore<br><small>Metadata</small></div>
+            </div>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>Driver:</strong> Manages HiveQL statements and session handles</li>
+                    <li><strong>Compiler:</strong> Converts HiveQL to execution plans</li>
+                    <li><strong>Metastore:</strong> Stores metadata about tables and partitions</li>
+                    <li><strong>Execution Engine:</strong> Executes tasks (MapReduce, Spark, Tez)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Hive Features -->
+        <div class="slide">
+            <h2>Hive Key Features</h2>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>HiveQL:</strong> SQL-like syntax familiar to database developers</li>
+                    <li><strong>Partitioning:</strong> Improves query performance through data organization</li>
+                    <li><strong>Bucketing:</strong> Further divides data for better performance</li>
+                    <li><strong>SerDe:</strong> Serializer/Deserializer for various data formats</li>
+                    <li><strong>UDF Support:</strong> User-defined functions for custom processing</li>
+                    <li><strong>ACID Transactions:</strong> Support for insert, update, delete operations</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Impala Introduction -->
+        <div class="slide">
+            <h2>Apache Impala</h2>
+            <div class="tech-card">
+                <h3>What is Impala?</h3>
+                <p>Impala is a massively parallel processing (MPP) SQL query engine for data stored in Apache Hadoop clusters. It provides fast, interactive SQL queries directly on data stored in HDFS and HBase.</p>
+                <ul>
+                    <li>Real-time SQL queries on Hadoop</li>
+                    <li>In-memory processing</li>
+                    <li>C++ implementation for performance</li>
+                    <li>ANSI SQL compliance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10: Impala Architecture -->
+        <div class="slide">
+            <h2>Impala Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="component">Impala Daemon<br><small>Query Processing</small></div>
+                <div class="component">Statestore<br><small>Metadata Sync</small></div>
+                <div class="component">Catalog Service<br><small>Metadata Cache</small></div>
+            </div>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>Impala Daemon:</strong> Core service running on each DataNode</li>
+                    <li><strong>Statestore:</strong> Monitors cluster health and distributes metadata</li>
+                    <li><strong>Catalog Service:</strong> Manages metadata and schema changes</li>
+                    <li><strong>Query Coordinator:</strong> Plans and coordinates query execution</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: Impala Features -->
+        <div class="slide">
+            <h2>Impala Key Features</h2>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>Low Latency:</strong> Sub-second query response times</li>
+                    <li><strong>In-Memory Processing:</strong> Avoids disk I/O for intermediate results</li>
+                    <li><strong>Columnar Storage:</strong> Optimized for analytical workloads</li>
+                    <li><strong>Parallel Execution:</strong> Distributes queries across cluster nodes</li>
+                    <li><strong>Standard SQL:</strong> Supports most ANSI SQL features</li>
+                    <li><strong>BI Tool Integration:</strong> Works with popular business intelligence tools</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Comparison Table -->
+        <div class="slide">
+            <h2>HBase vs Hive vs Impala</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>HBase</th>
+                    <th>Hive</th>
+                    <th>Impala</th>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>NoSQL Database</td>
+                    <td>Data Warehouse</td>
+                    <td>SQL Query Engine</td>
+                </tr>
+                <tr>
+                    <td>Query Language</td>
+                    <td>Java API, REST</td>
+                    <td>HiveQL (SQL-like)</td>
+                    <td>ANSI SQL</td>
+                </tr>
+                <tr>
+                    <td>Processing</td>
+                    <td>Real-time</td>
+                    <td>Batch</td>
+                    <td>Interactive</td>
+                </tr>
+                <tr>
+                    <td>Latency</td>
+                    <td>Low (milliseconds)</td>
+                    <td>High (minutes)</td>
+                    <td>Low (seconds)</td>
+                </tr>
+                <tr>
+                    <td>Use Case</td>
+                    <td>OLTP, Real-time</td>
+                    <td>ETL, Data Warehousing</td>
+                    <td>Analytics, BI</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Slide 13: Use Cases -->
+        <div class="slide">
+            <h2>When to Use Each Technology</h2>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div class="tech-card" style="flex: 1; margin: 10px; max-width: 300px;">
+                    <h3 style="color: #FFD700;">HBase</h3>
+                    <ul>
+                        <li>Real-time applications</li>
+                        <li>Random read/write access</li>
+                        <li>Time-series data</li>
+                        <li>IoT data ingestion</li>
+                        <li>Online serving systems</li>
+                    </ul>
+                </div>
+                <div class="tech-card" style="flex: 1; margin: 10px; max-width: 300px;">
+                    <h3 style="color: #FFD700;">Hive</h3>
+                    <ul>
+                        <li>Data warehousing</li>
+                        <li>ETL processes</li>
+                        <li>Batch processing</li>
+                        <li>Data mining</li>
+                        <li>Log analysis</li>
+                    </ul>
+                </div>
+                <div class="tech-card" style="flex: 1; margin: 10px; max-width: 300px;">
+                    <h3 style="color: #FFD700;">Impala</h3>
+                    <ul>
+                        <li>Interactive analytics</li>
+                        <li>BI reporting</li>
+                        <li>Ad-hoc queries</li>
+                        <li>Data exploration</li>
+                        <li>Real-time dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Integration -->
+        <div class="slide">
+            <h2>Technology Integration</h2>
+            <div class="tech-card">
+                <h3>How They Work Together</h3>
+                <div class="architecture-diagram">
+                    <div class="component">Data Sources<br><small>Logs, Files, Streams</small></div>
+                    <div class="arrow">→</div>
+                    <div class="component">HBase<br><small>Real-time Storage</small></div>
+                    <div class="arrow">→</div>
+                    <div class="component">Hive<br><small>Data Processing</small></div>
+                    <div class="arrow">→</div>
+                    <div class="component">Impala<br><small>Fast Analytics</small></div>
+                </div>
+                <ul>
+                    <li><strong>Data Pipeline:</strong> Stream data into HBase for real-time access</li>
+                    <li><strong>ETL Processing:</strong> Use Hive for data transformation and aggregation</li>
+                    <li><strong>Analytics:</strong> Query processed data with Impala for insights</li>
+                    <li><strong>Unified Access:</strong> All three can work with the same HDFS storage</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 15: Conclusion -->
+        <div class="slide">
+            <h2>Key Takeaways</h2>
+            <div class="tech-card">
+                <ul>
+                    <li><strong>Complementary Technologies:</strong> Each serves different purposes in the big data ecosystem</li>
+                    <li><strong>Choose Based on Use Case:</strong> Real-time (HBase), Batch (Hive), Interactive (Impala)</li>
+                    <li><strong>Scalability:</strong> All three can handle petabytes of data</li>
+                    <li><strong>SQL Accessibility:</strong> Hive and Impala make big data accessible to SQL users</li>
+                    <li><strong>Hadoop Integration:</strong> Seamlessly work within the Hadoop ecosystem</li>
+                    <li><strong>Performance Optimization:</strong> Each optimized for their specific workloads</li>
+                </ul>
+                <p style="margin-top: 30px; font-size: 1.3rem; color: #FFD700;">
+                    <strong>Success in big data requires choosing the right tool for the right job!</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">← Previous</button>
+        <button class="btn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+        
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                nextSlide();
+            } else if (endX - startX > 50) {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>
