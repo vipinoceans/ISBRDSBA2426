@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kunal More — Data Science & Business Analytics</title>
+  <meta name="description" content="Resume / Portfolio — Kunal More (Data Science & Business Analytics)" />
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --primary:#0b5cff;
+      --glass:rgba(15,23,42,0.04);
+      --shadow: 0 6px 18px rgba(14,30,37,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    [data-theme="dark"]{
+      --bg:#0b1220;
+      --card:#071023;
+      --muted:#9aa4b2;
+      --accent:#e6eefc;
+      --primary:#5aa0ff;
+      --glass:rgba(255,255,255,0.03);
+      --shadow: 0 8px 24px rgba(2,6,23,0.7);
+      color-scheme: dark;
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), rgba(0,0,0,0.02));
+      padding:28px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    /* Card */
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,0.03);
+    }
+
+    /* Left column */
+    .profile{
+      text-align:center;
+      padding-bottom:6px;
+    }
+    .avatar{
+      width:112px;height:112px;border-radius:18px;display:inline-block;
+      background:linear-gradient(135deg,var(--glass), transparent);
+      border:1px solid rgba(0,0,0,0.04);
+      margin-bottom:12px;
+    }
+    .name{font-size:20px;font-weight:700;color:var(--accent); margin:6px 0 2px;}
+    .title{font-size:13px;color:var(--muted);margin-bottom:10px;}
+    .contact{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+    .contact a{color:var(--primary);text-decoration:none;word-break:break-all}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);font-size:12px;color:var(--muted);margin-right:6px}
+
+    /* Right column content */
+    .section{margin-bottom:16px}
+    .section h3{margin:0 0 8px;font-size:15px;color:var(--accent)}
+    .muted{color:var(--muted);font-size:13px}
+    ul.no-bullets{list-style:none;padding:0;margin:0}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:13px}
+
+    .row{
+      display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+    }
+    .job{margin-bottom:10px}
+    .job .meta{font-size:13px;color:var(--muted)}
+    .job p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    .projects .proj{margin-bottom:10px}
+    .links a{display:inline-block;margin-right:10px;color:var(--primary);text-decoration:none;font-size:13px}
+
+    /* Buttons */
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    button{
+      background:var(--primary);
+      color:white;border:0;padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer;
+      box-shadow:0 6px 14px rgba(11,92,255,0.18);
+    }
+    button.ghost{background:transparent;color:var(--primary);box-shadow:none;border:1px solid rgba(11,92,255,0.12)}
+    .small{padding:6px 8px;font-size:13px;border-radius:8px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .container{grid-template-columns: 1fr; padding:12px}
+      .profile{display:flex;align-items:center;gap:12px;text-align:left}
+      .avatar{width:84px;height:84px}
+    }
+
+    /* Print styles */
+    @media print{
+      body{padding:0;background:white}
+      .container{max-width:800px;box-shadow:none;gap:10px}
+      button, .controls {display:none}
+      .card{border:0;box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px">
+      <div>
+        <strong style="font-size:18px">Kunal More</strong>
+        <div style="color:var(--muted);font-size:13px">Data Science & Business Analytics</div>
+      </div>
+      <div class="controls" aria-hidden="false">
+        <button id="toggleTheme" class="small" title="Toggle theme">Toggle Theme</button>
+        <button id="copyEmail" class="small ghost" title="Copy email">Copy Email</button>
+        <button id="printBtn" class="small" title="Print page">Print</button>
+      </div>
+    </div>
+
+    <div class="container" role="main">
+      <!-- Left column -->
+      <aside class="card" style="position:relative">
+        <div class="profile">
+          <div class="avatar" aria-hidden="true"></div>
+          <div style="text-align:left">
+            <div class="name">Kunal More</div>
+            <div class="title">Data Science & Business Analytics</div>
+            <div class="muted" style="font-size:13px">Bengaluru, IN</div>
+          </div>
+        </div>
+
+        <hr style="border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.06),transparent);margin:12px 0">
+
+        <div class="contact">
+          <div><strong>Phone:</strong> <span class="muted">+91 7506222185</span></div>
+          <div><strong>Email:</strong> <a id="emailLink" href="mailto:Kunalvm06@gmail.com">Kunalvm06@gmail.com</a></div>
+          <div class="links">
+            <a href="https://www.linkedin.com/in/kunal-more-9a163616b/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Kunalvm" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <hr style="border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.06),transparent);margin:12px 0">
+
+        <div class="section">
+          <h3>Summary</h3>
+          <div class="muted" style="font-size:14px">
+            Seeking opportunities to utilize analytical & technical skills to analyze large datasets and derive actionable insights to support business decisions.
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Core Skills</h3>
+          <div class="skills" aria-hidden="false">
+            <span class="skill">Python</span>
+            <span class="skill">SQL (MySQL, MS SQL)</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Pandas / NumPy</span>
+            <span class="skill">Matplotlib / Seaborn</span>
+            <span class="skill">Scikit-learn</span>
+            <span class="skill">TensorFlow / Keras</span>
+            <span class="skill">Jupyter / Colab</span>
+            <span class="skill">BigQuery</span>
+            <span class="skill">Agile / Scrum</span>
+            <span class="skill">SAP (Basics)</span>
+            <span class="skill">CRM</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Certifications</h3>
+          <ul class="no-bullets muted">
+            <li>SAP Business Analyst — Coursera (In Progress)</li>
+            <li>SAP Technology Consultant — Coursera (In Progress)</li>
+            <li>Salesforce Sales Operations — Coursera (In Progress)</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Right column -->
+      <main class="card">
+        <section class="section">
+          <h3>Professional Experience</h3>
+
+          <div class="job">
+            <div class="row">
+              <strong>Data Analyst Intern — NUMER8 Analytics Pvt Ltd.</strong>
+              <div class="meta">Nov 2021 — Feb 2022</div>
+            </div>
+            <p class="muted">
+              Built interactive dashboards in Power BI & Google Data Studio (improving reporting efficiency by ~30%). Managed MySQL and BigQuery databases,
+              optimized queries (reduced query time by ~25%). Cleaned & analyzed large datasets using Jupyter and Colab (improving data quality by ~40%).
+              Streamlined Jira workflows, improving productivity and reducing ticket resolution time by ~20%.
+            </p>
+          </div>
+
+          <div class="job">
+            <div class="row">
+              <strong>Operations & Analytics Intern — Mars Elevators and Lasers</strong>
+              <div class="meta">Jun 2025 — Aug 2025</div>
+            </div>
+            <p class="muted">
+              Assisted in inventory coordination, vendor communication, and maintaining operational SQL databases. Worked in Agile/Scrum environment
+              on sprint planning and backlog refinement. Developed Power BI dashboards to monitor order flow and operational performance.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>Education</h3>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div>
+              <strong>PGDM — Data Science & Business Analytics</strong>
+              <div class="muted">ISBR Business School, Bangalore (AICTE) — Jul 2024 to May 2026 — SGPA: 8.7 (ongoing)</div>
+            </div>
+
+            <div>
+              <strong>Executive PG Programme in Data Science</strong>
+              <div class="muted">IIIT Bangalore — May 2021 to Jun 2022</div>
+            </div>
+
+            <div>
+              <strong>B.Sc. Computer Science</strong>
+              <div class="muted">Kishinchand Chellaram College, Mumbai — Jul 2017 to Nov 2020 — CGPA: 7.93</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section projects">
+          <h3>Key Projects</h3>
+
+          <div class="proj">
+            <strong>Adventure Works Power BI Report</strong>
+            <div class="muted">Interactive Power BI dashboard monitoring sales/revenue/profit, regional comparisons, product trends, segmentation and forecasting.</div>
+            <div style="margin-top:6px"><a href="https://github.com/Kunalvm/Power-BI-Reports/blob/main/Adventure_Work%20Report.pbix" target="_blank" rel="noopener">View PBIX on GitHub</a></div>
+          </div>
+
+          <div class="proj">
+            <strong>IMDB Data Analysis</strong>
+            <div class="muted">Collected ~100 movies from IMDb, cleaned with Jupyter, performed EDA to reveal trends by year, genre, and ratings. Visualised insights & outliers.</div>
+            <div style="margin-top:6px"><a href="https://github.com/Kunalvm" target="_blank" rel="noopener">Project on GitHub</a></div>
+          </div>
+
+          <div class="proj">
+            <strong>Banking Data Analysis</strong>
+            <div class="muted">Analyzed large banking dataset to find drivers of loan defaults. Performed EDA and statistical analysis; improved potential default prediction accuracy by ~15%.</div>
+            <div style="margin-top:6px"><a href="https://github.com/Kunalvm/Data-Analysis-Project/blob/main/Data%20Analysis%20Project%20(EDA).ipynb" target="_blank" rel="noopener">Notebook on GitHub</a></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>Competencies & Tools</h3>
+          <div class="muted">
+            Data viz: Power BI, Matplotlib, Seaborn · Machine Learning: supervised & unsupervised, model evaluation, feature engineering · ETL & scripting: Python, SQL · Tools: Jupyter, Google Colab, BigQuery, MySQL · Agile & Scrum (Jira) · Basic SAP FI/MM/SD
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>Links</h3>
+          <div class="muted links">
+            <a href="https://www.linkedin.com/in/kunal-more-9a163616b/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Kunalvm" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://drive.google.com/file/d/1nLRmyUvRzzHerXnuT1t95Hvxn81CeZ3C/view" target="_blank" rel="noopener">Resume (PDF)</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle: persists via localStorage
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById('toggleTheme');
+      const printBtn = document.getElementById('printBtn');
+      const copyEmailBtn = document.getElementById('copyEmail');
+      const email = 'Kunalvm06@gmail.com';
+
+      function applyTheme(theme){
+        if(theme === 'dark'){
+          document.documentElement.setAttribute('data-theme','dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      }
+      const saved = localStorage.getItem('theme');
+      applyTheme(saved || 'light');
+
+      btn.addEventListener('click', () => {
+        const now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(now);
+        localStorage.setItem('theme', now);
+      });
+
+      printBtn.addEventListener('click', () => window.print());
+
+      copyEmailBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          copyEmailBtn.textContent = 'Email Copied';
+          setTimeout(()=> copyEmailBtn.textContent = 'Copy Email', 1800);
+        } catch(e){
+          // fallback: select mailto link
+          const a = document.getElementById('emailLink');
+          a.focus();
+          alert('Copy this email: ' + email);
+        }
+      });
+
+      // Accessibility: keyboard shortcut "t" toggles theme
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 't' && (e.ctrlKey || e.metaKey)){
+          btn.click();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
