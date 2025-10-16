@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Madhura Jadhav – Resume</title>
+  <meta name="description" content="Online resume of Madhura Jadhav – Business Analytics & Data Science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0d12;        /* dark bg */
+      --card: #121624;      /* card bg */
+      --muted: #a7b0c0;     /* subdued text */
+      --text: #eaf0ff;      /* main text */
+      --brand: #7aa2ff;     /* accent */
+      --chip: #1a2140;
+      --ring: 0 0 0 2px rgba(122,162,255,.45);
+    }
+    .light{
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --muted: #5b6577;
+      --text: #0b0d12;
+      --brand: #2b59ff;
+      --chip: #eef2ff;
+      --ring: 0 0 0 2px rgba(43,89,255,.2);
+      color-scheme: light;
+    }
+    html,body{height:100%}
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(122,162,255,.22), transparent 60%),
+                  radial-gradient(1200px 800px at -10% 10%, rgba(123,255,248,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6; 
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* Header */
+    .header{ display:grid; grid-template-columns: 1fr auto; gap:24px; align-items:center; margin-top:10px }
+    .title h1{ margin:0; font-size: clamp(28px, 5vw, 42px); letter-spacing:.2px }
+    .title p{ margin:6px 0 0; color:var(--muted)}
+    .contact{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end }
+    .chip{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; background:var(--chip); border-radius:999px; border:1px solid rgba(255,255,255,.08) }
+    .chip svg{ width:16px; height:16px; opacity:.9 }
+
+    /* Toolbar */
+    .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 }
+    .btn{ border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600 }
+    .btn:hover{ box-shadow: var(--ring) }
+
+    /* Layout */
+    .grid{ display:grid; grid-template-columns: 1fr; gap:22px }
+    @media (min-width: 960px){ .grid{ grid-template-columns: 1.2fr .8fr } }
+
+    /* Card */
+    .card{ background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px; box-shadow: 0 10px 30px rgba(0,0,0,.28)}
+    .card h2{ margin:0 0 10px; font-size: clamp(18px, 2.8vw, 22px) }
+    .subtle{ color:var(--muted); font-size:14px }
+
+    /* Sections */
+    .section + .section{ margin-top:18px }
+    .role{ display:grid; grid-template-columns: 1fr auto; gap:10px; align-items:baseline }
+    .role h3{ margin:0; font-size:18px }
+    .role .meta{ color:var(--muted); font-size:13px }
+    ul.clean{ margin:10px 0 0 18px }
+    ul.clean li{ margin:6px 0 }
+
+    /* Skills */
+    .skills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
+    .skill{ padding:8px 10px; border-radius:10px; background:var(--chip); border:1px solid rgba(255,255,255,.08); font-size:13px }
+
+    /* Projects */
+    .project{ padding:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; margin-top:10px }
+    .project h4{ margin:0 0 6px; font-size:16px }
+
+    footer{ text-align:center; color:var(--muted); font-size:13px; margin:26px 0 10px }
+  </style>
+</head>
+<body class="light" id="top">
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="title">
+        <h1>Madhura Jadhav</h1>
+        <p>Business Analytics & Data Science • ISBR Business School</p>
+      </div>
+      <div class="contact">
+        <a class="chip" href="mailto:Jadhav5madhura@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Jadhav5madhura@gmail.com
+        </a>
+        <a class="chip" href="tel:+917829187726" aria-label="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.66 12.66 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.66 12.66 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 7829187726
+        </a>
+        <a class="chip" href="https://www.linkedin.com/in/jadhavmadhura" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.9-2.2 3.9-2.2 4.2 0 5 2.8 5 6.5V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.8-2.8 3.8V24H8V8z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <button class="btn" id="toggleTheme" title="Toggle light/dark">🌗 Theme</button>
+      <button class="btn" onclick="window.print()" title="Print/Save as PDF">🖨️ Print</button>
+      <a class="btn" href="#top" title="Back to top">⬆️ Top</a>
+    </div>
+
+    <div class="grid">
+      <!-- LEFT COLUMN -->
+      <main class="column">
+        <section class="card section" id="summary">
+          <h2>Summary</h2>
+          <p>Currently pursuing a Business Analyst program at ISBR Business School with a tech background and hands‑on experience in data analysis, statistics, and machine learning. Eager to apply skills in Business Associate or Market Research Analyst roles to drive data‑informed decisions and real‑world impact.</p>
+        </section>
+
+        <section class="card section" id="experience">
+          <h2>Experience</h2>
+
+          <div class="role">
+            <h3>D Square Consulting — <span class="subtle">Data Science Intern</span></h3>
+            <div class="meta">Bangalore</div>
+          </div>
+          <ul class="clean">
+            <li>Built a College Management Dashboard from scratch in Power BI, designing KPIs and reports.</li>
+            <li>Designed relationship mapping and star‑schema models to connect departmental data into one system.</li>
+            <li>Created interactive dashboards with filters, KPI cards, and drill‑throughs for decision‑making.</li>
+            <li>Retail forecasting using Prophet, Holt‑Winters, ACF/PACF, and ensembles to predict trends.</li>
+            <li>Handled data cleaning, transformation, and modeling using SQL and Power Query.</li>
+            <li>Strengthened data storytelling, data modeling, dashboards, and forecasting skills.</li>
+          </ul>
+
+          <div class="section"></div>
+          <div class="role">
+            <h3>Business Toys Pvt. Ltd. — <span class="subtle">Data Science Intern</span></h3>
+            <div class="meta">Bangalore</div>
+          </div>
+          <ul class="clean">
+            <li>Data extraction, cleaning, and EDA using MySQL, Advanced Excel, R, and Python.</li>
+            <li>Collaborated on statistical & ML models and contributed to written reports.</li>
+            <li>Worked on a project to evaluate effectiveness of sales channels.</li>
+            <li>Created digital content for Data Science education for students & professionals.</li>
+          </ul>
+        </section>
+
+        <section class="card section" id="projects">
+          <h2>Selected Projects</h2>
+
+          <div class="project">
+            <h4>Website Data Analysis of Xiaomi India (Sample)</h4>
+            <p>Descriptive analysis, day‑of‑week traffic effects, correlation analysis (time spent, pages viewed, amount spent), and forecasting via regression.</p>
+          </div>
+
+          <div class="project">
+            <h4>Business Model Analysis: Pizza Hut & Domino's</h4>
+            <p>Comparative study based on visual parameters, identified revenue drivers, built univariate regression for sales forecasting.</p>
+          </div>
+
+          <div class="project">
+            <h4>Wine Quality Analysis</h4>
+            <p>EDA, PCA for dimensionality reduction, built Logistic Regression and SVM, evaluated to maximize classification accuracy.</p>
+          </div>
+
+          <div class="project">
+            <h4>Boston House Pricing Analytics</h4>
+            <p>Exploratory analysis & outlier treatment; models: Multiple Regression, SVR, Gradient Boosting; assessed with RMSE & MAE.</p>
+          </div>
+
+          <div class="project">
+            <h4>Online Hotel Booking – Data Viz & Storytelling</h4>
+            <p>Interactive dashboards in Tableau 2019.2 for booking trends, demographic insights, and revenue optimization suggestions.</p>
+          </div>
+        </section>
+
+        <section class="card section" id="education">
+          <h2>Education</h2>
+          <div class="role">
+            <h3>ISBR Business School (AICTE) — <span class="subtle">PGDM, Data Science & Business Analytics</span></h3>
+            <div class="meta">Jul 2024 – Present • 8.2 CGPA</div>
+          </div>
+          <div class="role" style="margin-top:8px">
+            <h3>Jain College of Engineering (AICTE) — <span class="subtle">B.E., Computer Science</span></h3>
+            <div class="meta">2019</div>
+          </div>
+        </section>
+      </main>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="column">
+        <section class="card section" id="skills">
+          <h2>Skills</h2>
+          <div class="subtle">Technical</div>
+          <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">R</span>
+            <span class="skill">SQL</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">Advanced Excel</span>
+            <span class="skill">Descriptive & Inferential Stats</span>
+            <span class="skill">Regression / Classification</span>
+            <span class="skill">PCA</span>
+            <span class="skill">Decision Trees</span>
+            <span class="skill">Random Forest</span>
+            <span class="skill">KNN</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Tableau</span>
+          </div>
+
+          <div class="subtle" style="margin-top:12px">Soft</div>
+          <div class="skills">
+            <span class="skill">Decision‑Making</span>
+            <span class="skill">Proactive</span>
+            <span class="skill">Analytical Thinking</span>
+          </div>
+
+          <div class="subtle" style="margin-top:12px">Certifications</div>
+          <div class="skills">
+            <span class="skill">Udemy — SQL</span>
+            <span class="skill">Udemy — Python</span>
+          </div>
+        </section>
+
+        <section class="card section" id="interests">
+          <h2>Areas of Interest</h2>
+          <div class="skills">
+            <span class="skill">Business Research</span>
+            <span class="skill">Data Wrangling</span>
+            <span class="skill">AI</span>
+            <span class="skill">Research</span>
+            <span class="skill">Tracking Start‑ups</span>
+            <span class="skill">Photography</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Madhura Jadhav • Built with HTML, CSS & JS · <a href="#top">Back to top</a>
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle
+    const btn = document.getElementById('toggleTheme');
+    const root = document.body;
+    const saved = localStorage.getItem('theme');
+    if(saved){ root.className = saved }
+    btn.addEventListener('click', ()=>{
+      root.classList.toggle('light');
+      const mode = root.classList.contains('light') ? 'light' : 'dark';
+      root.className = mode; localStorage.setItem('theme', mode);
+    });
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
