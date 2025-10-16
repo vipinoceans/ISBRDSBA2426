@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley Alexander - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .profile-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .degree {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.05em;
+        }
+
+        .school {
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .year {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 5px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: #555;
+            margin-left: 15px;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cert-item {
+            background: #e8f0ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .cert-name {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .cert-status {
+            color: #764ba2;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .language-item {
+            display: inline-block;
+            background: #f0f4ff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .name {
+                font-size: 1.8em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">Ashley Alexander</div>
+            <div class="contact-info">
+                <div class="contact-item">📧 ashleyalex2000@gmail.com</div>
+                <div class="contact-item">📍 Jaipur, Rajasthan</div>
+                <div class="contact-item">📱 +917665545977</div>
+                <div class="contact-item">📅 16/06/2001</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Profile Section -->
+            <div class="section">
+                <div class="section-title">Profile</div>
+                <p class="profile-text">
+                    Focused, analytical, and a quick learner. I am an intern, seeking for an opportunity that offers meaningful challenges and fosters continuous growth. Skilled in managing both production and non-production environments, I excel at troubleshooting complex issues and ensuring system stability. Passionate about Business Analytics, I enjoy solving critical problems by leveraging data analysis and various analytical tools to drive informed decision making.
+                </p>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="education-item">
+                    <div class="degree">Post Graduation Diploma In Management (PGDM)</div>
+                    <div class="school">ISBR Business School, AICTE Delhi (Approved)</div>
+                    <div class="year">2024 – 2026 | Bengaluru</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Bachelor in Computer Application (BCA)</div>
+                    <div class="school">Krupanidhi Degree College</div>
+                    <div class="year">2018 – 2022 | Bengaluru</div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section">
+                <div class="section-title">Projects</div>
+
+                <div class="project-item">
+                    <div class="project-title">🎯 Marketing Live Project (2024)</div>
+                    <div class="project-desc">
+                        • Developed a comprehensive brand strategy, Rebranding, consumer segmentation, and promotional plan
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">💻 Protein Mart (2021)</div>
+                    <div class="project-desc">
+                        • Created a website using PyCharm<br>
+                        • This project helped me gain hands-on knowledge using Java, CSS, HTML
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">🏭 Industry Visit - Nandini Milk Factory</div>
+                    <div class="project-desc">
+                        • Prepared an Industry Report on the Nandini Milk Factory analyzing supply chain operations
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-container">
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">PowerBI</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">Data Visualization</div>
+                    <div class="skill-badge">Sales & Marketing</div>
+                    <div class="skill-badge">Market Research</div>
+                </div>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="section">
+                <div class="section-title">Certificates</div>
+                <div class="cert-item">
+                    <div class="cert-name">Data Science and Business Analytics</div>
+                    <div class="cert-status">⏳ Ongoing - Major and Minor Projects, upskilling</div>
+                </div>
+            </div>
+
+            <!-- Languages Section -->
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div>
+                    <span class="language-item">English</span>
+                    <span class="language-item">Hindi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Last Updated: October 2024 | Designed with ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on page load
+        window.addEventListener('load', () => {
+            const container = document.querySelector('.container');
+            container.style.animation = 'slideUp 0.6s ease-out';
+        });
+
+        // Add CSS animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Skill badge interaction
+        document.querySelectorAll('.skill-badge').forEach(badge => {
+            badge.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
