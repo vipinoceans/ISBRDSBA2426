@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syeda Ameena Zoya - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            text-align: justify;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .experience-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company, .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .date {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            color: #555;
+        }
+
+        .details li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+        }
+
+        .certificates {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .certificates li {
+            margin-left: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .additional-info {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .info-row {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .cgpa {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SYEDA AMEENA ZOYA</h1>
+            <div class="contact-info">
+                <span>📍 Bengaluru, India</span>
+                <span>📞 +91 7013855848</span>
+                <a href="mailto:syedaameena920@gmail.com">✉️ syedaameena920@gmail.com</a>
+                <a href="https://www.linkedin.com/in/syeda-ameena-zoya/" target="_blank">🔗 LinkedIn Profile</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <p class="summary">
+                    Self-Motivated and adaptable data analyst in data cleaning and manipulation. Proficient in Power BI and SQL, I am eager to assist organizations in making data-backed decisions for enhanced efficiency and profitability.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Data Visualization and Presentation</div>
+                    <div class="skill-item">Structured Query Language (SQL)</div>
+                    <div class="skill-item">R Programming</div>
+                    <div class="skill-item">Visual Data Representation</div>
+                    <div class="skill-item">MS Excel</div>
+                    <div class="skill-item">Time Management</div>
+                    <div class="skill-item">Power BI Dashboards</div>
+                    <div class="skill-item">Python Programming</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-title">Intern in Akshaya Computers</div>
+                    <div class="company">Certified Python Intern</div>
+                    <div class="date">August 2023 - October 2023</div>
+                    <ul class="details">
+                        <li>Gained hands-on experience in coding and problem-solving</li>
+                        <li>Developed practical Python programming skills</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="experience-title">Postgraduate Diploma in Management in Data Science and Business Analytics</div>
+                    <div class="institution">ISBR Business School (AICTE Delhi, Approved)</div>
+                    <div class="date">July 2024 - Present</div>
+                    <p class="details"><span class="cgpa">1st Semester SGPA: 8.03</span></p>
+                </div>
+
+                <div class="education-item">
+                    <div class="experience-title">Bachelor of Commerce (Computer Application)</div>
+                    <div class="institution">Sri Krishnadevaraya University</div>
+                    <div class="company">Sri Sathya Sai Degree College, Penukonda, Andhra Pradesh</div>
+                    <div class="date">June 2021 - July 2024</div>
+                    <p class="details"><span class="cgpa">CGPA: 8.00</span></p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Certificates</h2>
+                <div class="certificates">
+                    <ul>
+                        <li><strong>Data Analytics and Visualization</strong> from Accenture
+                            <ul style="margin-top: 5px;">
+                                <li>Gained hands-on experience in data cleaning, transformation, and modeling to derive actionable insights</li>
+                                <li>Developed interactive data visualizations and crafted compelling data-driven stories tailored for client presentations</li>
+                            </ul>
+                        </li>
+                        <li><strong>SQL Certificate</strong> from Jobaaj Learnings
+                            <ul style="margin-top: 5px;">
+                                <li>SQL queries for data extraction and analysis</li>
+                                <li>Hands-on experience with joins, functions, and subqueries</li>
+                                <li>Skilled in managing and querying relational databases</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Additional Information</h2>
+                <div class="additional-info">
+                    <div class="info-row">
+                        <div class="info-label">Languages:</div>
+                        <div>English, Hindi, Urdu, Telugu, Kannada</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Awards/Activities:</div>
+                        <div><strong>Second Position in Vendor Analysis Competition</strong></div>
+                        <ul class="details" style="margin-top: 10px;">
+                            <li>Achieved 2nd place in a competitive vendor analysis challenge by leveraging data-driven evaluation techniques</li>
+                            <li>Demonstrated strong analytical skills and strategic decision-making in supplier performance assessment</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
