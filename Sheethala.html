@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sheethala Devi — Marketing & Business Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed; --glass: rgba(255,255,255,0.04);
+      --text:#e6eef8; --accent-2:#06b6d4;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);background:linear-gradient(180deg,#071127 0%, #081022 100%);}
+    .container{max-width:980px;margin:36px auto;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .hero{display:flex;gap:20px;align-items:center}
+    .avatar{width:108px;height:108px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:32px;color:white}
+    h1{margin:0;font-size:28px}
+    .sub{color:var(--muted);margin-top:6px;font-size:14px}
+
+    .contact{display:flex;gap:12px;align-items:center}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--text);display:inline-flex;gap:8px;align-items:center}
+    main{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:22px}
+
+    /* left column */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px}
+    h2{margin:0 0 8px 0;font-size:18px}
+    .muted{color:var(--muted);font-size:13px}
+
+    .internship .role{display:flex;justify-content:space-between;align-items:flex-start}
+    .bullets{margin:8px 0 0 0;padding-left:16px}
+    ul{margin:8px 0 12px 0}
+
+    /* right column */
+    .sidebar .skill{margin-bottom:10px}
+    .skill .bar{height:8px;background:#0b1220;border-radius:8px;overflow:hidden}
+    .skill .fill{height:100%;width:70%;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+
+    footer{margin-top:24px;display:flex;justify-content:space-between;align-items:center}
+    .actions button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
+
+    /* Responsive */
+    @media(max-width:900px){main{grid-template-columns:1fr;}.sidebar{order:2}}
+
+    /* Light theme support (toggle via JS) */
+    .light{--bg:#f7fbff;--card:#ffffff;--muted:#606b7b;--text:#0b1b2b;--glass: rgba(12,21,34,0.03)}
+    .light body{background:var(--bg)}
+
+    /* small utilities */
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(124,58,237,0.12);color:var(--accent);font-weight:600;font-size:12px}
+    .project{margin-bottom:12px}
+    a.link{color:var(--accent);text-decoration:none;font-weight:600}
+    .timeline{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <header>
+      <div class="hero">
+        <div class="avatar">SD</div>
+        <div>
+          <h1>Sheethala Devi</h1>
+          <div class="sub">Marketing & Business Analytics — ISBR Business School</div>
+          <div class="contact" style="margin-top:8px">
+            <div class="pill">📱 +91 9866739899</div>
+            <a class="pill link" href="mailto:sheethaladevi2@gmail.com">✉️ sheethaladevi2@gmail.com</a>
+            <a class="pill link" href="https://www.linkedin.com/in/sheethala-devi-/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="tag">Program Ambassador — ISBR</div>
+        <div style="margin-top:8px" class="timeline">Updated: Oct 2025</div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card internship">
+          <h2>Internship</h2>
+          <div class="timeline">Marketing Analytics Intern — Vanshika LifeSpaces <span style="float:right;font-size:13px;color:var(--muted)">May 2025 – Sept 2025</span></div>
+          <ul class="bullets">
+            <li>Analyzed audience targeting and campaign performance data from Google Ads and Meta Ads to provide strategic insights.</li>
+            <li>Created dashboards and reports to track performance and support business decisions.</li>
+            <li>Designed and optimized campaigns based on KPIs like CTR, engagement, and conversions.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Projects</h2>
+
+          <div class="project">
+            <strong>Business Strategy Analytics — Dunkin’ Donuts</strong>
+            <div class="muted">STP analysis · Competitor benchmarking · Growth recommendations</div>
+            <ul>
+              <li>Analyzed STP and customer segments; benchmarked against Starbucks and suggested regional menu and plant-based options.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <strong>Marketing Innovation — Zivelle (Vegan Handbag Brand)</strong>
+            <div class="muted">Positioning · Campaign: <em>#CarryYourStory</em> · PLC strategy</div>
+            <ul>
+              <li>Conceptualized Zivelle as a premium vegan brand and developed product positioning and launch strategy.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <strong>Marketing & Market Research — Crank Energy Shot</strong>
+            <div class="muted">Primary research · TAM-SAM-SOM · GTM strategy</div>
+            <ul>
+              <li>Conducted primary research (148 responses), market sizing and proposed acquisition/retention campaigns with 5-year revenue projections.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Leadership & Achievements</h2>
+          <ul>
+            <li><strong>Program Ambassador</strong> — ISBR Business School: coordinated academic & extracurricular initiatives.</li>
+            <li><strong>Case Study Competition Winner</strong> — Crank Energy Drink: contributed market analysis and strategy.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Certifications</h2>
+          <ul>
+            <li>Google Digital Marketing & E‑Commerce Professional Certificate</li>
+            <li>Google Ads for Beginners</li>
+            <li>Google SEO Fundamentals</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h2>Skills</h2>
+          <div class="skill"><div class="muted">Google Ads & Meta Ads</div><div class="bar" style="margin-top:8px"><div class="fill" style="width:86%"></div></div></div>
+          <div class="skill"><div class="muted">Data Analytics & Visualization (Power BI, Excel)</div><div class="bar" style="margin-top:8px"><div class="fill" style="width:82%"></div></div></div>
+          <div class="skill"><div class="muted">Python (EDA)</div><div class="bar" style="margin-top:8px"><div class="fill" style="width:70%"></div></div></div>
+          <div class="skill"><div class="muted">Dashboarding & Reporting</div><div class="bar" style="margin-top:8px"><div class="fill" style="width:78%"></div></div></div>
+          <div class="skill"><div class="muted">Market Research & TAM-SAM-SOM</div><div class="bar" style="margin-top:8px"><div class="fill" style="width:80%"></div></div></div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Contact & Links</h2>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a class="link" href="mailto:sheethaladevi2@gmail.com">sheethaladevi2@gmail.com</a>
+            <a class="link" href="https://www.linkedin.com/in/sheethala-devi-/" target="_blank">LinkedIn Profile</a>
+            <div class="muted">Phone: +91 9866739899</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;text-align:center">
+          <h2>Quick Actions</h2>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:8px" class="actions">
+            <button onclick="window.print()">Print / Save as PDF</button>
+            <button id="toggle">Toggle Light</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="muted">Resume generated from original PDF.</div>
+      <div class="muted">Designed for web · Responsive · Print-optimized</div>
+    </footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggle');
+    btn.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('light');
+      btn.innerText = document.documentElement.classList.contains('light') ? 'Toggle Dark' : 'Toggle Light';
+    });
+
+    // small enhancement: keyboard shortcut P to print
+    document.addEventListener('keydown', (e)=>{ if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='p'){ e.preventDefault(); window.print(); } });
+  </script>
+</body>
+</html>
