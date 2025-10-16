@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Sumaria | Data & Business Analyst</title>
+    <style>
+        /* --- General Styles & Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f7f6;
+            --text-color: #34495e;
+            --card-bg-color: #ffffff;
+            --border-color: #e0e5e9;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: var(--card-bg-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            margin: 10px 0 20px;
+            font-size: 1.4em;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Main Content Layout --- */
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .left-column {
+            width: 35%;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .right-column {
+            width: 65%;
+            padding: 30px;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Specific Section Details --- */
+        .job, .education-item, .project, .certification {
+            margin-bottom: 25px;
+        }
+        
+        .job-title, .degree, .project-title, .cert-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .company, .institution, .cert-issuer {
+            font-size: 1.05em;
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* --- Skills Section --- */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li {
+            background-color: #eaf2f8;
+            color: var(--primary-color);
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .skills-list li:hover {
+            transform: translateX(5px);
+        }
+        .skill-category {
+            font-weight: bold;
+            margin-top: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .left-column, .right-column {
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+                border-right: none;
+            }
+        }
+        
+        /* --- Fade-in Animation --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInAnimation 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInAnimation {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animation delay for sections */
+        section {
+            animation-delay: 0.2s;
+        }
+        .job, .education-item {
+             animation-delay: 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Siddharth Sumaria</h1>
+            <h2>Results-driven Data & Business Analyst</h2>
+            <div class="contact-info">
+                <span><a href="mailto:sumariasid@gmail.com">📧 sumariasid@gmail.com</a></span>
+                <span><a href="tel:+917507939033">📞 +91 7507939033</a></span>
+                <span><a href="https://www.linkedin.com" target="_blank">🔗 LinkedIn</a></span>
+                <span><a href="https://github.com" target="_blank">🔗 GitHub</a></span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="left-column">
+                <section class="fade-in">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <p class="degree">PGDM in Data Science and Business Analytics</p>
+                        <p class="institution">ISBR Business School</p>
+                        <p class="date">July 2024 - Present | CGPA: 8.65/10</p>
+                    </div>
+                    <div class="education-item">
+                        <p class="degree">Bachelor in Management Studies (Marketing)</p>
+                        <p class="institution">University of Mumbai</p>
+                        <p class="date">April 2020 - March 2023 | CGPA: 7.03/9</p>
+                    </div>
+                </section>
+                
+                <section class="fade-in">
+                    <h3>Technical Skills</h3>
+                    <ul class="skills-list">
+                        <li class="skill-category">Tools & Languages</li>
+                        <li>Python, R, SQL, Power BI, Tableau</li>
+                        <li>Power Query, Google Data Studio</li>
+                        <li>Advanced Excel (VBA, DAX, Pivot)</li>
+                        <li class="skill-category">Frameworks & Libraries</li>
+                        <li>Pandas, NumPy, Scikit-learn</li>
+                        <li>Matplotlib, Seaborn, Statsmodels</li>
+                        <li class="skill-category">Techniques & Concepts</li>
+                        <li>ETL Processes & Data Pipeline Automation</li>
+                        <li>Exploratory Data Analysis (EDA)</li>
+                        <li>Forecasting & Predictive Modeling</li>
+                        <li>KPI Dashboards & Root Cause Analysis</li>
+                        <li>Data Warehousing & Report Standardization</li>
+                    </ul>
+                </section>
+                
+                 <section class="fade-in">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li>Analytical Thinking & Business Storytelling</li>
+                        <li>Strategic Problem-Solving & Execution</li>
+                        <li>Client Communication & Stakeholder Reporting</li>
+                        <li>Leadership & Cross-functional Collaboration</li>
+                    </ul>
+                </section>
+
+            </aside>
+
+            <main class="right-column">
+                <section class="fade-in">
+                    <h3>Professional Summary</h3>
+                    <p>
+                        Currently pursuing a PGDM in Data Science, adept at translating complex data into actionable insights. Skilled in Python, SQL, Power BI, and Tableau for creating ETL pipelines, forecasting models, and KPI dashboards. Experienced in process automation, root cause analysis, and enhancing operational efficiency through data-driven strategies and cross-functional collaboration.
+                    </p>
+                </section>
+                
+                <section class="fade-in">
+                    <h3>Experience</h3>
+                    <div class="job">
+                        <p class="job-title">Analyst</p>
+                        <p class="company">Wipro Insurance Pvt. Ltd</p>
+                        <p class="date">January 2023 - December 2023</p>
+                        <ul>
+                            <li>Executed BI projects using SQL, Power BI, and Excel VBA to automate KPI dashboards.</li>
+                            <li>Designed ETL pipelines and Power Query transformations, streamlining data warehousing.</li>
+                            <li>Developed forecasting dashboards that improved business projection accuracy by 18%.</li>
+                            <li>Built standardized ad-hoc reports for leadership to monitor revenue and operational metrics.</li>
+                            <li>Collaborated with Finance, HR, and Operations to improve data validation and automation.</li>
+                        </ul>
+                    </div>
+                     <div class="job">
+                        <p class="job-title">Process Associate</p>
+                        <p class="company">Teleperformance Pvt. Ltd.</p>
+                         <p class="date">April 2022 - October 2022</p>
+                        <ul>
+                            <li>Conducted ad-hoc analysis to identify workflow inefficiencies and improve SLA compliance.</li>
+                            <li>Created automated Excel VBA dashboards and Power BI visualizations for reporting.</li>
+                            <li>Implemented data cleansing frameworks that improved data accuracy by 25%.</li>
+                            <li>Partnered with product teams to develop data validation processes.</li>
+                        </ul>
+                    </div>
+                     <div class="job">
+                        <p class="job-title">Data Analyst Intern</p>
+                        <p class="company">Cloud That Technologies Private Limited</p>
+                        <p class="date">June 2025 - August 2025</p>
+                        <ul>
+                            <li>Built automated ETL pipelines integrating sales and marketing datasets in Power BI.</li>
+                            <li>Conducted EDA to track monthly revenue and customer behavior trends.</li>
+                            <li>Developed forecasting dashboards using DAX and Power Query for leadership.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="fade-in">
+                    <h3>Projects & Research</h3>
+                    <div class="project">
+                        <p class="project-title">Customer Segmentation & Retention Strategy using RFM Modeling</p>
+                        <ul>
+                            <li>Designed automated segmentation dashboards in Power BI using ETL and DAX.</li>
+                            <li>Applied regression analysis to predict customer purchase frequency and revenue.</li>
+                            <li>Delivered insights that improved marketing ROI by 15%.</li>
+                        </ul>
+                    </div>
+                     <div class="project">
+                        <p class="project-title">Research Paper: Gen Z vs. Millennials Investment Behavior</p>
+                        <ul>
+                            <li>Performed quantitative research using SQL and R for trend identification.</li>
+                            <li>Built interactive dashboards to visualize correlations between demographics and investments.</li>
+                            <li>Applied predictive analysis to generate strategic investment recommendations.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="fade-in">
+                    <h3>Certifications</h3>
+                    <div class="certification">
+                        <p class="cert-title">Management Consultant</p>
+                        <p class="cert-issuer">Board Infinity - March 2025</p>
+                    </div>
+                    <div class="certification">
+                         <p class="cert-title">Data Visualisation: Empowering Business with Effective Insights</p>
+                        <p class="cert-issuer">May 2025</p>
+                    </div>
+                    <div class="certification">
+                        <p class="cert-title">Bloomberg Market Concept & ESG Certification</p>
+                        <p class="cert-issuer">November 2024 & March 2025</p>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        // Simple script to add fade-in animation to sections as they appear
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
