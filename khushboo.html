@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Khushboo Naik — Resume</title>
+  <style>
+    :root{
+      --bg:#f7fafc;--card:#ffffff;--muted:#6b7280;--accent:#0f172a;--accent-2:#0ea5a4;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 6px 24px rgba(12, 18, 28, 0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2f7);color:var(--accent);}
+    .container{max-width:1000px;margin:36px auto;padding:28px}
+    .card{background:var(--card);border-radius:16px;padding:26px;box-shadow:var(--shadow);display:grid;grid-template-columns:260px 1fr;gap:22px}
+    .sidebar{padding:12px}
+    .photo{width:220px;height:220px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),#7dd3fc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:white;margin-bottom:12px}
+    .name{font-size:24px;font-weight:700;margin:6px 0}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:18px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent-2);color:white;text-decoration:none;font-weight:600;margin-right:8px}
+    .section-title{font-size:16px;font-weight:700;margin:6px 0 12px}
+    .muted{color:var(--muted);font-size:14px}
+    .skill-pill{display:inline-block;background:#f1f5f9;padding:6px 8px;border-radius:999px;margin:6px 6px 0 0;font-size:13px}
+    .content h3{margin:0;font-size:18px}
+    .job{padding:12px;border-radius:10px;margin-bottom:12px;background:linear-gradient(180deg,#ffffff,#fbfdff)}
+    .job .date{float:right;color:var(--muted);font-size:13px}
+    .list{margin:8px 0 0 18px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsiveness */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .photo{width:120px;height:120px}
+    }
+
+    /* small interactive header */
+    .top-actions{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .toggle{cursor:pointer;padding:6px 10px;border-radius:8px;border:1px solid #e6eef2;background:#fff}
+
+    /* print styles */
+    @media print{body{background:white} .card{box-shadow:none;border-radius:0} .top-actions{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-actions">
+      <div style="flex:1">
+        <!-- Left intentionally blank for alignment -->
+      </div>
+      <a class="btn" id="downloadBtn">Download PDF</a>
+      <button class="toggle" id="printBtn">Print / Save as PDF</button>
+    </div>
+
+    <article class="card" role="article">
+      <aside class="sidebar">
+        <div class="photo" id="photo">Khushboo<br>Naik</div>
+        <div class="name">Khushboo Naik</div>
+        <div class="meta">Bangalore, Karnataka<br>+91 99453 85432<br><a href="mailto:Khushboonaik02@gmail.com">Khushboonaik02@gmail.com</a></div>
+
+        <div>
+          <div class="section-title">Skills</div>
+          <div class="muted">Data / Tools</div>
+          <div>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Python (NumPy, Pandas)</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Tableau</span>
+            <span class="skill-pill">Excel</span>
+          </div>
+
+          <div style="margin-top:12px"><div class="section-title">Languages</div>
+            <div class="muted">English • Hindi • Kannada • Marathi</div></div>
+
+          <div style="margin-top:12px"><div class="section-title">Certifications</div>
+            <div class="muted">Management Consulting Bootcamp — Board Infinity (Feb 2025)</div></div>
+
+          <div style="margin-top:12px"><div class="section-title">Strengths</div>
+            <ul class="muted list">
+              <li>Learning agility &amp; problem solving</li>
+              <li>Effective interpersonal communication</li>
+              <li>Attention to detail &amp; analytical thinking</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <header style="display:flex;align-items:flex-start;justify-content:space-between">
+          <div style="max-width:720px">
+            <h2 style="margin:0">Career Objective</h2>
+            <p class="muted">Aspiring Business Analyst and Product Manager with a solid foundation in Data Analytics, statistical analysis and visualization tools (Excel, Python, R, SQL, Power BI, Tableau). Recently completed a Management Consulting bootcamp and seeking entry-level roles to apply my analytical skills and contribute to data-driven decision-making.</p>
+          </div>
+        </header>
+
+        <hr style="border:none;border-top:1px dashed #e6eef2;margin:16px 0">
+
+        <div>
+          <h3>Experience</h3>
+
+          <div class="job">
+            <div style="overflow:hidden"><strong>Process Associate — Tata Consultancy Services</strong> <span class="date">Oct 2017 – Oct 2019 | Pune, Maharashtra</span></div>
+            <div class="muted">Worked for TIAA-CREF (Financial Services) — client data entry, retirement plans, IRAs, life insurance, annuities.</div>
+            <ul class="list muted">
+              <li>Streamlined data processing and built Excel templates to reduce manual entry time.</li>
+              <li>Managed &amp; validated datasets for 500+ retirement plans ensuring accuracy and compliance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3>Internships</h3>
+
+          <div class="job">
+            <div style="overflow:hidden"><strong>Marketing Analytics Intern — Vanshika Live Spaces Pvt. Ltd.</strong> <span class="date">May 2025 – Present | Bengaluru</span></div>
+            <ul class="list muted">
+              <li>Executed digital marketing campaigns and managed client communications.</li>
+              <li>Contributed to CRM data analysis and campaign performance reporting to support product positioning.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div style="overflow:hidden"><strong>Program Management Intern — Bloom (WeCare &amp; Dare Hospitalities Pvt. Ltd.)</strong> <span class="date">Apr 2025 – Jun 2025 | Bengaluru</span></div>
+            <ul class="list muted">
+              <li>Drove end-to-end program execution and improved session quality and user feedback.</li>
+              <li>Identified process gaps and supported product operations to enhance customer satisfaction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3>Academic Details</h3>
+          <div class="job">
+            <strong>PGDM — ISBR Business School, Bangalore</strong> <span class="date">Jun 2024 – Jun 2026</span>
+            <div class="muted">Super Specialization: Data Science &amp; Business Analytics — 1st Sem CGPA: 8.65, 2nd Sem CGPA: 9.06</div>
+          </div>
+
+          <div class="job">
+            <strong>B.Sc. — GI Bagewadi Degree College, Nipani</strong> <span class="date">May 2014 – May 2017</span>
+            <div class="muted">Physics, Chemistry &amp; Mathematics — Overall: 78.75%</div>
+          </div>
+
+          <div class="job">
+            <strong>Intermediate (12th) — GI Bagewadi PU College, Nipani</strong> <span class="date">May 2012 – Mar 2014</span>
+            <div class="muted">Science Stream — 76%</div>
+          </div>
+
+          <div class="job">
+            <strong>SSLC — Tiny Tots Convent School, Nipani</strong> <span class="date">Apr 2012</span>
+            <div class="muted">Overall: 86%</div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Other Highlights</h3>
+          <div class="job muted">
+            <ul class="list">
+              <li>Anti Money Laundering, Claims Processing and Transaction Monitoring — exposure through work.</li>
+              <li>Strong statistical foundation: statistics, probability and hypothesis testing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <footer>
+          <div class="muted">This page was generated from the uploaded resume. To update any field open the HTML and edit the relevant text blocks.</div>
+        </footer>
+      </section>
+    </article>
+  </div>
+
+  <script>
+    // Link to the uploaded PDF resume (replace path if needed)
+    const resumePath = '/mnt/data/Khushboo Naik Resume (Photo) .pdf';
+    document.getElementById('downloadBtn').href = resumePath;
+    document.getElementById('downloadBtn').setAttribute('download', 'Khushboo_Naik_Resume.pdf');
+
+    document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+
+    // if photo exists as separate image file, user can replace the innerHTML
+    // Quick customization helper: allow double-click on photo to edit text
+    const photo = document.getElementById('photo');
+    photo.addEventListener('dblclick', ()=>{
+      const name = prompt('Enter short label or image filename (e.g. khushboo.jpg). To use an image provide a relative path inside an <img> tag.');
+      if(!name) return;
+      if(name.toLowerCase().match(/\.(jpg|jpeg|png|svg)$/)){
+        photo.innerHTML = '<img src="'+name+'" alt="photo" style="width:100%;height:100%;object-fit:cover;border-radius:10px">';
+      } else {
+        photo.textContent = name;
+      }
+    });
+  </script>
+</body>
+</html>
