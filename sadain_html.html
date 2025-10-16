@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohd. Sadain Khan — Resume</title>
+  <meta name="description" content="Business Analyst with expertise in Python, SQL, Power BI, and Excel for data analysis, visualization, and predictive modeling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --panel: #121828;
+      --ink: #e9edf5;
+      --muted: #9aa6c1;
+      --brand: #5b8cff;
+      --chip: #1b2340;
+      --border: #243055;
+      --accent: #00e0a4;
+    }
+    :root.light {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --brand: #315efb;
+      --chip: #eef2ff;
+      --border: #e5e7eb;
+      --accent: #00b894;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6; letter-spacing: 0.1px;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    header {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(180%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .bar { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .brand {
+      display: flex; align-items: center; gap: 14px; font-weight: 800; letter-spacing: 0.3px;
+    }
+    .avatar { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); display: grid; place-items: center; color: #fff; font-weight: 900; }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; }
+    nav a { padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--chip); color: var(--ink); font-weight: 500; }
+    nav a:hover { border-color: var(--brand); }
+
+    .hero { display: grid; gap: 18px; grid-template-columns: 1.2fr 0.8fr; padding: 28px 0 8px; }
+    .hero .title { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 0; }
+    .subtitle { color: var(--muted); font-size: 15px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      border: 1px solid var(--border); background: var(--panel); color: var(--ink);
+      padding: 10px 14px; border-radius: 12px; font-weight: 600; cursor: pointer;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--accent)); border-color: transparent; color: #07121f; }
+    .btn.ghost { background: var(--chip); }
+    .btn:active { transform: translateY(1px); }
+
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+    .card {
+      grid-column: span 12; background: var(--panel); border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: 0.2px; }
+    .card .muted { color: var(--muted); font-size: 13px; }
+
+    /* Two-column layout on md+ */
+    @media (min-width: 880px) {
+      .left { grid-column: span 8; }
+      .right { grid-column: span 4; }
+    }
+
+    /* Pills / Chips */
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 600; }
+
+    /* Lists */
+    ul.clean { list-style: none; padding: 0; margin: 10px 0 0; }
+    ul.clean li { margin: 8px 0; }
+
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+
+    .kpi {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 8px;
+    }
+    .kpi div { background: var(--chip); border:1px solid var(--border); border-radius: 12px; padding: 10px; text-align: center; }
+    .kpi strong { display: block; font-size: 18px; }
+
+    footer { margin: 40px 0 60px; color: var(--muted); font-size: 13px; text-align: center; }
+
+    /* Print */
+    @media print {
+      header, .btn, nav, .actions { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card { break-inside: avoid; box-shadow: none; border-color: #e5e7eb; }
+      .wrap { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="brand" aria-label="Site identity">
+        <div class="avatar" aria-hidden="true">MS</div>
+        <div>
+          <div style="font-size:15px">Mohd. Sadain Khan</div>
+          <div class="subtitle">Business Analyst • Python | SQL | Power BI | Excel</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <button id="themeBtn" class="btn ghost" aria-pressed="false" title="Toggle theme">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <h1 class="title">Business Analyst focused on data-led decisions</h1>
+        <p class="subtitle">Skilled in requirements gathering, stakeholder engagement, and data quality—plus hands-on Python, SQL, Power BI, and Excel. Comfortable with AI/ML & Generative AI (LLMs like GPT) for faster analysis and better insights.</p>
+        <div class="actions" role="group" aria-label="Quick actions">
+          <a class="btn primary" href="#contact">Contact</a>
+          <button class="btn" id="printBtn">Print / Save PDF</button>
+          <button class="btn ghost" id="copyEmailBtn" data-email="khansadain0917@gmail.com">Copy Email</button>
+        </div>
+        <div class="kpi" aria-hidden="true">
+          <div><strong>Python</strong><span>EDA • Stats • ML</span></div>
+          <div><strong>SQL</strong><span>MySQL • MS SQL</span></div>
+          <div><strong>Power BI</strong><span>DAX • Power Query</span></div>
+        </div>
+      </div>
+      <aside class="card" style="align-self:start">
+        <div class="section-title">
+          <h3 style="margin:0">At a glance</h3>
+        </div>
+        <ul class="clean">
+          <li>📍 Bengaluru, Karnataka</li>
+          <li>📞 <a href="tel:+919519944357">+91 95199 44357</a></li>
+          <li>✉️ <a id="emailLink" href="mailto:khansadain0917@gmail.com">khansadain0917@gmail.com</a></li>
+          <li>🔗 <a href="https://www.linkedin.com/in/sadain-khan-analyst/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>💻 <a href="https://github.com/Sdain-khan-2000/Insurance-EDA-Analysis" target="_blank" rel="noopener">GitHub: Insurance EDA</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="grid" style="margin-top: 8px;">
+      <!-- LEFT COLUMN -->
+      <section class="left">
+        <!-- SKILLS -->
+        <article id="skills" class="card">
+          <div class="section-title">
+            <h3>Skills</h3>
+            <div class="subtitle">Primary tools & domains</div>
+          </div>
+          <div style="display:grid; gap:16px; grid-template-columns: repeat(2, minmax(0,1fr));">
+            <div>
+              <strong>Data Analysis & Visualization</strong>
+              <ul class="clean">
+                <li>Python (Pandas, NumPy, Stats), Matplotlib, Seaborn</li>
+                <li>SQL (MS SQL, MySQL)</li>
+                <li>Power BI (DAX, Power Query)</li>
+                <li>Excel (Pivot Tables, Macros)</li>
+              </ul>
+            </div>
+            <div>
+              <strong>AI/ML & Generative AI</strong>
+              <ul class="clean">
+                <li>EDA, hypothesis testing, predictive modelling</li>
+                <li>LLMs (GPT, DALL·E)</li>
+                <li>Basic ML models for forecasting & classification</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Business Analysis</strong>
+              <ul class="clean">
+                <li>Requirements gathering, process mapping</li>
+                <li>Agile/Scrum (user stories, sprints)</li>
+                <li>Stakeholder communication</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Data Governance</strong>
+              <ul class="clean">
+                <li>Data quality, integrity, compliance</li>
+                <li>Documentation, KPI tracking</li>
+              </ul>
+            </div>
+          </div>
+          <div class="chips" style="margin-top: 12px;">
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Excel</span>
+            <span class="chip">DAX</span>
+            <span class="chip">EDA</span>
+            <span class="chip">Forecasting</span>
+            <span class="chip">LLMs</span>
+          </div>
+        </article>
+
+        <!-- PROJECTS -->
+        <article id="projects" class="card">
+          <div class="section-title">
+            <h3>Projects</h3>
+            <div>
+              <label class="subtitle" for="projectFilter">Filter:</label>
+              <select id="projectFilter" class="btn ghost" style="padding:6px 10px;">
+                <option value="all">All</option>
+                <option value="python">Python</option>
+                <option value="sql">SQL</option>
+                <option value="powerbi">Power BI</option>
+                <option value="ml">Machine Learning</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="projectList" style="display:grid; gap:12px;">
+            <div class="project" data-tags="python powerbi ml">
+              <strong>Insurance EDA Analysis (Apr 2025)</strong>
+              <ul class="clean">
+                <li>Performed EDA to identify key risk factors, cost drivers, and ensure data quality.</li>
+                <li>Created KPI reports to support business case development and decision-making.</li>
+                <li>Repo: <a href="https://github.com/Sdain-khan-2000/Insurance-EDA-Analysis" target="_blank" rel="noopener">Insurance EDA</a></li>
+              </ul>
+            </div>
+            <div class="project" data-tags="python sql powerbi ml">
+              <strong>E-commerce Sales Prediction (Ongoing, Aug 2025)</strong>
+              <ul class="clean">
+                <li>Building predictive models to forecast sales and key business drivers.</li>
+                <li>Designed Power BI dashboards with KPIs for stakeholder insights.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXPERIENCE -->
+        <article id="experience" class="card">
+          <div class="section-title">
+            <h3>Experience</h3>
+          </div>
+          <div style="display:grid; gap:14px;">
+            <div>
+              <strong>Data Analyst Intern — CloudThat Technologies, Bengaluru</strong>
+              <div class="muted">Jun 2025 – Aug 2025</div>
+              <ul class="clean">
+                <li>Conducted business data analysis; cleaned and engineered features in Python to improve data quality.</li>
+                <li>Optimized SQL queries and performed EDA to identify trends and provide recommendations.</li>
+                <li>Built Power BI dashboards for KPI tracking and reporting to support decision-making.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Marketing Analyst Intern — FlyHigh Consultancy, Lucknow</strong>
+              <div class="muted">Oct 2022 – Nov 2023</div>
+              <ul class="clean">
+                <li>Gathered and analysed business data to track KPIs and identify patterns.</li>
+                <li>Worked with stakeholders to streamline processes and align with objectives.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- EDUCATION -->
+        <article id="education" class="card">
+          <div class="section-title">
+            <h3>Education</h3>
+          </div>
+          <ul class="clean">
+            <li>
+              <strong>ISBR Business School, Bengaluru</strong> — PGDM (AICTE, New Delhi)
+              <div class="muted">Jul 2024 – Present • Major: Data Science & Business Analytics • Minor: Product Management</div>
+            </li>
+            <li>
+              <strong>National P.G College, Lucknow</strong> — B.Com (CPE & NAAC Grade ‘A’)
+              <div class="muted">Apr 2019 – Mar 2022 • General</div>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="right">
+        <!-- CONTACT -->
+        <article id="contact" class="card">
+          <div class="section-title">
+            <h3>Contact</h3>
+          </div>
+          <ul class="clean">
+            <li>📧 <a href="mailto:khansadain0917@gmail.com">khansadain0917@gmail.com</a></li>
+            <li>📞 <a href="tel:+919519944357">+91 95199 44357</a></li>
+            <li>🔗 <a href="https://www.linkedin.com/in/sadain-khan-analyst/" target="_blank" rel="noopener">linkedin.com/in/sadain-khan-analyst</a></li>
+          </ul>
+          <div class="actions" style="margin-top: 10px;">
+            <a class="btn" href="#" id="vcardBtn">Download vCard</a>
+            <a class="btn ghost" href="#" id="pdfBtn" download>Download PDF</a>
+          </div>
+          <p class="muted" style="margin-top:8px">Tip: use the Print button above for a clean PDF export.</p>
+        </article>
+
+        <!-- CERTIFICATIONS -->
+        <article class="card">
+          <div class="section-title">
+            <h3>Certifications</h3>
+          </div>
+          <ul class="clean">
+            <li>Data Analytics Certification</li>
+            <li>Generative AI for Business Analytics</li>
+            <li>SQL Certification</li>
+            <li>Jira Certification</li>
+          </ul>
+        </article>
+
+        <!-- QUICK LINKS -->
+        <article class="card">
+          <div class="section-title">
+            <h3>Links</h3>
+          </div>
+          <ul class="clean">
+            <li>LinkedIn — <a href="https://www.linkedin.com/in/sadain-khan-analyst/" target="_blank" rel="noopener">Profile</a></li>
+            <li>GitHub — <a href="https://github.com/Sdain-khan-2000/Insurance-EDA-Analysis" target="_blank" rel="noopener">Insurance EDA Analysis</a></li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Mohd. Sadain Khan. Built with HTML + CSS + JS. 
+    </footer>
+  </main>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohd. Sadain Khan",
+    "jobTitle": "Business Analyst",
+    "email": "mailto:khansadain0917@gmail.com",
+    "telephone": "+919519944357",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "url": "https://www.linkedin.com/in/sadain-khan-analyst/",
+    "knowsAbout": ["Python", "SQL", "Power BI", "Excel", "Data Analysis", "Machine Learning", "LLMs"]
+  }
+  </script>
+
+  <script>
+    // Theme toggle (persist in localStorage)
+    const themeBtn = document.getElementById('themeBtn');
+    function setTheme(light) {
+      document.documentElement.classList.toggle('light', light);
+      themeBtn.setAttribute('aria-pressed', String(light));
+      localStorage.setItem('theme', light ? 'light' : 'dark');
+    }
+    setTheme(localStorage.getItem('theme') === 'light');
+    themeBtn.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('light')));
+
+    // Print / Save PDF
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Copy email
+    const copyBtn = document.getElementById('copyEmailBtn');
+    copyBtn.addEventListener('click', async () => {
+      const email = copyBtn.dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = 'Email copied ✔';
+        setTimeout(() => (copyBtn.textContent = 'Copy Email'), 1500);
+      } catch (e) {
+        alert('Copy not supported. Email: ' + email);
+      }
+    });
+
+    // Project filter
+    const filterSel = document.getElementById('projectFilter');
+    const projectEls = Array.from(document.querySelectorAll('#projectList .project'));
+    function applyFilter() {
+      const v = filterSel.value;
+      projectEls.forEach(el => {
+        const tags = el.dataset.tags || '';
+        const show = v === 'all' || tags.includes(v);
+        el.style.display = show ? 'block' : 'none';
+      });
+    }
+    filterSel.addEventListener('change', applyFilter);
+    applyFilter();
+
+    // vCard download (client-side)
+    document.getElementById('vcardBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const vcf = `BEGIN:VCARD\nVERSION:3.0\nN:Khan;Mohd. Sadain;;;\nFN:Mohd. Sadain Khan\nEMAIL;TYPE=INTERNET:khansadain0917@gmail.com\nTEL;TYPE=CELL:+919519944357\nADR;TYPE=HOME:;;Bengaluru;Karnataka;;India\nTITLE:Business Analyst\nURL:https://www.linkedin.com/in/sadain-khan-analyst/\nEND:VCARD`;
+      const blob = new Blob([vcf], { type: 'text/vcard' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Mohd_Sadain_Khan.vcf'; a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // PDF link (if you host your PDF, update the URL below)
+    document.getElementById('pdfBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      // Replace with your hosted PDF URL
+      const pdfUrl = 'Mohd_Sadain_Khan_Resume.pdf';
+      const a = document.createElement('a');
+      a.href = pdfUrl; a.download = 'Mohd_Sadain_Khan_Resume.pdf'; a.click();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
