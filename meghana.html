@@ -1,71 +1,561 @@
-// ...existing code...
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meghana — Resume</title>
-  <style>
-    :root{--bg:#0f1724;--accent:#6ee7b7;--card:#0b1220;--text:#e6eef6}
-    html,body{height:100%;margin:0;font-family:Inter, Arial, sans-serif;background:
-      radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.04), transparent 10%),
-      linear-gradient(180deg,#071029 0%,#07121a 100%);color:var(--text)}
-    .wrap{max-width:860px;margin:40px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    h1{margin:0;color:var(--accent)}
-    .meta{color:#bcded0}
-    section{margin-top:18px}
-    h2{margin:0 0 8px 0;color:#cfeadf;font-size:16px}
-    p,ul{color:#d6e9df;line-height:1.5}
-    ul{padding-left:18px;margin-top:6px}
-    a.back{color:#9fbfb0;text-decoration:none;font-size:14px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:640px){.grid{grid-template-columns:1fr}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veda Meghana Gandi - Business Analytics & Data Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --accent: #f093fb;
+            --text: #2d3748;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: slideDown 0.6s ease-out;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .header-info h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header-info p {
+            font-size: 1.1em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--primary);
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--primary), var(--secondary)) 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .experience-item,
+        .project-item,
+        .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:last-child,
+        .project-item:last-child,
+        .education-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .experience-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .experience-company {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: #718096;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .experience-description {
+            color: var(--text);
+            margin-top: 12px;
+            line-height: 1.8;
+        }
+
+        .experience-description li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .project-tools {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .project-description {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .education-details {
+            flex: 1;
+        }
+
+        .education-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .education-school {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .education-gpa {
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .certification-item {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .certification-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .certification-item i {
+            font-size: 1.5em;
+            min-width: 30px;
+        }
+
+        .certification-item span {
+            font-size: 0.95em;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+            }
+
+            .header-info h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap" role="main">
-    <header>
-      <div>
-        <h1>Meghana</h1>
-        <div class="meta">Student • Frontend Developer • meghana@example.com</div>
-      </div>
-      <div>
-        <a class="back" href="index.html">← Back to index</a>
-      </div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="header-info">
+                    <h1>Veda Meghana Gandi</h1>
+                    <p><i class="fas fa-briefcase"></i> Business Analytics | Data Analytics</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+918523010087" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-8523010087</span>
+                </a>
+                <a href="mailto:meghanagv123@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>meghanagv123@gmail.com</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bengaluru, India</span>
+                </a>
+            </div>
+        </header>
 
-    <section aria-label="Profile">
-      <h2>Profile</h2>
-      <p>Motivated student building responsive web apps. Interested in cloud deployments and modern frontend tooling.</p>
-    </section>
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Skills</h2>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Business Analysis</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Requirement Gathering</span>
+                    <span class="skill-tag">BRD/FRD Documentation</span>
+                    <span class="skill-tag">Use Case Development</span>
+                    <span class="skill-tag">User Stories</span>
+                    <span class="skill-tag">Process Mapping</span>
+                </div>
+            </div>
 
-    <section aria-label="Experience">
-      <h2>Experience</h2>
-      <ul>
-        <li>Intern — Frontend Developer (Summer 2024): built UI components and small internal tools.</li>
-      </ul>
-    </section>
+            <div class="skill-category">
+                <div class="skill-category-title">Data & Analytics</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">MS-Excel</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">EDA</span>
+                    <span class="skill-tag">KPI Reporting</span>
+                </div>
+            </div>
 
-    <section aria-label="Education">
-      <h2>Education</h2>
-      <p>Bachelor of Science — Computer Science (in progress)</p>
-    </section>
+            <div class="skill-category">
+                <div class="skill-category-title">Machine Learning & Automation</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linear Regression</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">Feature Engineering</span>
+                    <span class="skill-tag">Forecasting</span>
+                </div>
+            </div>
 
-    <section aria-label="Skills">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div>
-          <strong>Languages</strong>
-          <ul><li>HTML, CSS, JavaScript</li></ul>
-        </div>
-        <div>
-          <strong>Tools</strong>
-          <ul><li>Git, VS Code, basic Docker</li></ul>
-        </div>
-      </div>
-    </section>
-  </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Tools & Methodologies</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Agile Scrum</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Axure</span>
+                    <span class="skill-tag">Visio</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Data Science Intern</span>
+                    <span class="experience-company">CloudThat</span>
+                    <span class="experience-date">June 2025 – August 2025</span>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Built a smart vehicle dashboard using Python, SQL, Excel, Power BI analyzing Telangana RTA data (2019-2025)</li>
+                        <li>Conducted EDA & trend analysis on EV adoption, fuel preferences, and seasonal demand with interactive KPI dashboards</li>
+                        <li>Applied ML models (Linear Regression, Random Forest) to forecast EV registrations for 2025-2026</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Research Analyst</span>
+                    <span class="experience-company">Dr. MCR HRD Institute</span>
+                    <span class="experience-date">March 2023 – August 2023</span>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Conducted in-depth research on the economic and geopolitical impact of the Russia-Ukraine war in India</li>
+                        <li>Analyzed trade disruptions, energy security concerns, and policy responses</li>
+                        <li>Compiled findings into a detailed report with data-driven insights and recommendations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Amazon ML Summer School</span>
+                    <span class="experience-company">Amazon</span>
+                    <span class="experience-date">August 2025</span>
+                </div>
+                <div class="experience-description">
+                    Completed intensive training on machine learning concepts including supervised learning, deep learning, NLP, and recommendation systems.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Namma Yatri App Data Analysis</div>
+                <div class="project-tools"><i class="fas fa-tools"></i> SQL, Excel, Power BI</div>
+                <div class="project-description">
+                    Analyzed ride data using SQL to uncover trip patterns, driver earnings, and user behavior. Built visual dashboards using Power BI with maps and charts to track key metrics like fares, completed trips, and conversion rates.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Netflix Content Analysis</div>
+                <div class="project-tools"><i class="fas fa-tools"></i> Power BI</div>
+                <div class="project-description">
+                    Built an interactive Power BI dashboard to analyze titles, ratings, and country-wise content distribution. Integrated dynamic filters and DAX calculations to enable data exploration and derive key metrics.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Marketing Project – ScanGo Smart Shopping Cart</div>
+                <div class="project-tools"><i class="fas fa-tools"></i> Market Research, Competitor Analysis, Brand Positioning</div>
+                <div class="project-description">
+                    Designed a marketing strategy for AI-powered smart shopping cart and scanners. Conducted consumer pain-point analysis, competitor benchmarking, and brand positioning using CBBE & IMC models. Proposed digital campaigns and retail partnerships to drive adoption.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="education-item">
+                <div class="education-details">
+                    <div class="education-name">Post Graduate Diploma in Management</div>
+                    <div class="education-school">ISBR Business School, Bengaluru</div>
+                    <div class="education-gpa">CGPA: 8.88 | 2024 – 2026 (Expected)</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-details">
+                    <div class="education-name">Bachelor of Arts in Political Science & History</div>
+                    <div class="education-school">GITAM University, Hyderabad</div>
+                    <div class="education-gpa">CGPA: 7.76 | 2021 – 2024</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+            
+            <div class="certification-grid">
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Business Analysis "A to Z" Masterclass</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Foundations of UX Design – Google</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Business Analyst in SQL</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Microsoft Power BI Desktop</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>SQL Hacker Rank</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Everyday Excel – Parts 1, 2, 3</span>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Data Visualization: Empowering Business</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Veda Meghana Gandi | Business Analytics & Data Analytics Professional</p>
+        </footer>
+    </div>
 </body>
 </html>
-// ...existing code...
