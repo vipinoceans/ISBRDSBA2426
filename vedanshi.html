@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vedanshi Shukla | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: #f8f9fb; color: #222; line-height: 1.6; }
+    header { background: #222; color: #fff; padding: 2rem 1rem; text-align: center; }
+    header h1 { font-size: 2rem; }
+    header p { color: #ddd; margin-top: 5px; }
+    section { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { border-left: 4px solid #007bff; padding-left: 10px; margin-bottom: 1rem; color: #007bff; }
+    ul { margin-left: 20px; }
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .project, .job { margin-bottom: 1rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+    footer { text-align: center; padding: 1.5rem; color: #555; font-size: 0.9rem; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vedanshi Shukla</h1>
+    <p>Bengaluru, Karnataka | <a href="mailto:vedanshishuklas2001@gmail.com">vedanshishuklas2001@gmail.com</a> | 8736805777</p>
+    <p>
+      <a href="https://www.linkedin.com/in/vedanshi-shukla/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/Vedanshi-shukla2001/EDA_Project" target="_blank">GitHub</a>
+    </p>
+  </header>
+
+  <section class="fade-in">
+    <h2>Objective</h2>
+    <p>Business Analyst intern focused on digitalization; translates pain points into requirements, KPIs, and pilot plans using analytics and agile practices.</p>
+  </section>
+
+  <section class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div><b>Programming & Analytics:</b> Python (Pandas, NumPy), Statistics, Hypothesis Testing, ML, Agile</div>
+      <div><b>Databases:</b> MS SQL Server, MySQL, ETL, Data Quality</div>
+      <div><b>BI & Visualization:</b> Power BI, Tableau, Excel, PowerPoint, Matplotlib, Seaborn</div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Telco Customer Churn – EDA Project (Python) | Apr 2025</h3>
+      <ul>
+        <li>Performed EDA using Pandas/Seaborn and identified churn patterns.</li>
+        <li>Delivered visuals and actionable insights on churn drivers.</li>
+        <li><a href="https://github.com/Vedanshi-shukla2001/EDA_Project" target="_blank">View Project</a></li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Sales Performance Analysis (Power BI) | Jul 2025 – Present</h3>
+      <ul>
+        <li>Cleaned data, handled missing values, and created an interactive Power BI dashboard.</li>
+        <li>Defined KPIs and reviewed trends through SQL-based insights.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>Internships</h2>
+    <div class="job">
+      <h3>CloudThat, Bengaluru | Data Analyst Intern | Jun 2025 – Aug 2025</h3>
+      <ul>
+        <li>Cleaned 50K+ data rows and optimized SQL queries (CTEs, window functions) for 20% faster insights.</li>
+        <li>Built KPI dashboards in Power BI and defined churn KPIs with stakeholders.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Viral Fission, Lucknow | Campus Ambassador | May 2022 – Dec 2023</h3>
+      <ul>
+        <li>Organized 5+ campus campaigns and engaged 200+ students in brand initiatives.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>Education</h2>
+    <ul>
+      <li><b>ISBR Business School, Bengaluru</b> – PGDM (Data Science & Product Management), CGPA 8.63/10 (2024–Present)</li>
+      <li><b>National PG College, Lucknow</b> – B.Com, Grade ‘A’ (2019–2022)</li>
+    </ul>
+  </section>
+
+  <section class="fade-in">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Advanced Excel & Data Analytics – Udemy</li>
+      <li>Workshops: Power BI, SQL Server</li>
+      <li>Highest marks award – Secondary School</li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2025 Vedanshi Shukla — Designed with HTML & JavaScript
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+</body>
+</html>
