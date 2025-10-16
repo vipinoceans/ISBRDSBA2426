@@ -2,87 +2,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
-    <style>
-        :root {
-            --bg: #0f1724;
-            --card: #0b1220;
-            --accent: #6ee7b7;
-            --text: #e6eef6;
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Inter, Arial, sans-serif;
-            background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent 10%),
-                        linear-gradient(180deg, #071029 0%, #07121a 100%);
-            color: var(--text);
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-card {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            border: 1px solid rgba(255,255,255,0.04);
-            padding: 48px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-            width: 100%;
-        }
-        .big-message {
-            font-size: clamp(28px, 6vw, 64px);
-            line-height: 1.02;
-            margin: 0 0 12px 0;
-            color: var(--accent);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .sub {
-            margin: 0;
-            color: #bcded0;
-            font-size: clamp(14px, 2vw, 18px);
-        }
-
-        /* small layout for existing content below hero */
-        .info {
-            margin-top: 28px;
-            color: #9fbfb0;
-        }
-
-        @media (max-width: 520px) {
-            .hero-card {
-                padding: 28px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Index</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#6ee7b7; --text:#e6eef6;
+    }
+    html,body{height:100%;margin:0;font-family:Inter, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent 10%),
+        linear-gradient(180deg,#071029 0%,#07121a 100%); color:var(--text);}
+    .container{max-width:1000px;margin:0 auto;padding:40px 20px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    h1{margin:0;color:var(--accent);font-size:clamp(24px,4.5vw,40px)}
+    p.lead{margin:6px 0 0;color:#bcded0}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
+    .card a{color:var(--accent);text-decoration:none;font-weight:700}
+    .card small{display:block;color:#9fbfb0;margin-top:8px}
+    .actions{display:flex;gap:8px;align-items:center}
+    .btn{background:var(--accent);color:#042018;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+    footer{margin-top:36px;color:#9fbfb0;font-size:13px}
+    @media (max-width:520px){.container{padding:20px}}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <main class="hero" role="main" aria-labelledby="hero-heading">
-            <section class="hero-card" aria-live="polite">
-                <h1 id="hero-heading" class="big-message">Let's learn deploying apps via cloud</h1>
-                <p class="sub">One big step: build, push, and run your app on a cloud provider — start with a simple deployment today.</p>
-            </section>
-        </main>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Resume Index</h1>
+        <p class="lead">A single page to list individual resume pages. Click a name to open that person's resume.</p>
+      </div>
+      <div class="actions" aria-hidden="false">
+        <!-- Use this button to add new resume files (manually create X.html and update this list) -->
+        <a class="btn" href="#" onclick="alert('Create a new file like alice.html and add it to this list.');return false;">Add resume</a>
+      </div>
+    </header>
 
-        <section class="info" aria-label="About">
-            <h2 style="color:#cfeadf;margin-top:28px">About</h2>
-            <p>Add your content here...</p>
-        </section>
-    </div>
+    <main>
+      <section class="cards" aria-label="List of resumes">
+        <!-- Add one card per resume page -->
+        <article class="card" role="article" aria-labelledby="r-meghana">
+          <h3 id="r-meghana"><a href="meghana.html">Meghana</a></h3>
+          <small>Student • Frontend Developer • meghana@example.com</small>
+        </article>
+
+        <!-- Example placeholder for future resumes:
+        <article class="card" role="article" aria-labelledby="r-alice">
+          <h3 id="r-alice"><a href="alice.html">Alice</a></h3>
+          <small>Student • Data Analyst • alice@example.com</small>
+        </article>
+        -->
+      </section>
+    </main>
+
+    <footer>
+      <p>Each resume is a separate HTML file placed in the same folder (e.g. meghana.html). Update this index to add new names and links.</p>
+    </footer>
+  </div>
 </body>
 </html>
 // ...existing code...

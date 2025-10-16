@@ -1,0 +1,71 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meghana — Resume</title>
+  <style>
+    :root{--bg:#0f1724;--accent:#6ee7b7;--card:#0b1220;--text:#e6eef6}
+    html,body{height:100%;margin:0;font-family:Inter, Arial, sans-serif;background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.04), transparent 10%),
+      linear-gradient(180deg,#071029 0%,#07121a 100%);color:var(--text)}
+    .wrap{max-width:860px;margin:40px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    h1{margin:0;color:var(--accent)}
+    .meta{color:#bcded0}
+    section{margin-top:18px}
+    h2{margin:0 0 8px 0;color:#cfeadf;font-size:16px}
+    p,ul{color:#d6e9df;line-height:1.5}
+    ul{padding-left:18px;margin-top:6px}
+    a.back{color:#9fbfb0;text-decoration:none;font-size:14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div>
+        <h1>Meghana</h1>
+        <div class="meta">Student • Frontend Developer • meghana@example.com</div>
+      </div>
+      <div>
+        <a class="back" href="index.html">← Back to index</a>
+      </div>
+    </header>
+
+    <section aria-label="Profile">
+      <h2>Profile</h2>
+      <p>Motivated student building responsive web apps. Interested in cloud deployments and modern frontend tooling.</p>
+    </section>
+
+    <section aria-label="Experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>Intern — Frontend Developer (Summer 2024): built UI components and small internal tools.</li>
+      </ul>
+    </section>
+
+    <section aria-label="Education">
+      <h2>Education</h2>
+      <p>Bachelor of Science — Computer Science (in progress)</p>
+    </section>
+
+    <section aria-label="Skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div>
+          <strong>Languages</strong>
+          <ul><li>HTML, CSS, JavaScript</li></ul>
+        </div>
+        <div>
+          <strong>Tools</strong>
+          <ul><li>Git, VS Code, basic Docker</li></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+// ...existing code...
